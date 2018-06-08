@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.location.href="https://www.baidu.com";
+	/*var myData = [
+        {	id:1,
+            pid:0,
+            name:'一级(1)'
+        },
+        {	id:2,
+            pid:0,
+            name:'一级(2)'
+        },
+        {
+            id:3,
+			pid:2,
+            name:'二级(2-1)'
+        },
+        {
+            id:4,
+			pid:2,
+            name:'二级(2-2)'
+        },
+        {
+            id:5,
+			pid:4,
+            name:'三级(2-2-1)'
+        },
+        {
+            id:6,
+			pid:0,
+            name:'一级(3)'
+        },
+        {
+            id:7,
+			pid:6,
+            name:'二级(3-1)'
+        },
+        {
+            id:8,
+			pid:7,
+            name:'三级(3-1-1)'
+        },
+        {
+            id:9,
+			pid:10,
+            name:'三级(3-2-1)'
+        },
+        {
+            id:10,
+			pid:6,
+            name:'二级(3-2)'
+        },
+        {
+            id:11,
+			pid:9,
+            name:'四级(3-2-1-1)'
+        },
+        {
+            id:12,
+			pid:13,
+            name:'六级(3-2-1-1)'
+        }
+    ];
+	var result=[];
+	console.log(myData);
+
+	/*
+	方法1
+	console.log(returnList(myData,myData));
+	console.log(JSON.stringify(myData));
+	function returnList(plist,list){
+		if(list.length>=0){
+			for (var j = 0; j < plist.length; j++) {
+				var arr=[];
+				for (var i = 0; i < list.length;) {
+					if(plist[j].id==list[i].pid){
+						arr.push(list[i]);
+						list.splice(i,1);
+					}else {
+						i++;
+					}
+				}
+				if(arr.length>0){
+					plist[j].child=arr;
+				}
+				if(plist[j].child){
+					 returnList(plist[j].child,list);
+				}	
+			}
+		}	
+	}*/
+	/*
+	方法2
+	function addChild(list,plist){
+		for (var i = 0; i < plist.length; i++) {
+			for (var j = 0; j < list.length;) {
+				if(plist[i].id==list[j].pid){
+					if(plist[i].child==undefined){
+						var arr=[];
+						arr.push(list[j]);
+						plist[i].child=arr;
+						list.splice(j,1);
+					}else{
+						plist[i].child.push(list[j]);
+						list.splice(j,1);
+					}
+				}else{
+					j++;
+				}
+			}
+			if(plist[i].child!=undefined){
+				addChild(list,plist[i].child);
+			}
+		}
+	}
+	 
+	addChild(myData,myData);
+	console.log(myData)
+	console.log(JSON.stringify(myData))
+	 */
+    // var temp
+    // var result = []
+    // for (var i = 0; i < myData.length; i++) {
+    //     if (myData[i].level==1) {
+    //         if (temp) {
+    //             result.push(temp)
+    //         }
+    //         temp = myData[i]
+    //     }else{
+    //         temp.child = temp.child ? temp.child.concat(myData[i]) :[].concat(myData[i])
+    //     }
+    //     result.push(temp)
+    // };
+    // console.log(result)*/
+	</script>
+</body>
+</html>
