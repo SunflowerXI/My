@@ -10,7 +10,7 @@
   <sql id="Base_Column_List" >
     userid, password, username, mobile
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="findByUserid" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from user

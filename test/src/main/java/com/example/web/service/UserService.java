@@ -13,4 +13,8 @@ public interface UserService {
 	public List<User> list();
 
 	public Map<String,Object> register(User user);
+	
+	public String findRedis();
+	
+	public User getOne(String userid);
 }

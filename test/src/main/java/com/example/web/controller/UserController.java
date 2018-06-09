@@ -34,6 +34,16 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@RequestMapping("/redis")  
+	public String findRedis() {  
+	    return userService.findRedis();  
+	}  
+	
+	@RequestMapping("/redisUser")  
+	public String findRedisUser(@RequestBody User user) {  
+	    return userService.getOne(user.getUserid()).toString(); 
+	}  
+	
 	@ResponseBody
     @RequestMapping(value="/register")
     public Map<String,Object> register(@RequestBody User user) {

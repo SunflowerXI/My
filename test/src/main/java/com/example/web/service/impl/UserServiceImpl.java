@@ -7,10 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.web.mapper.UserMapper;
 import com.example.web.service.UserService;
+
+import redis.clients.jedis.JedisCluster;
+
 import com.example.web.entity.User;
 
 @Service
@@ -19,6 +23,8 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	UserMapper userMapper;
 	
+	@Autowired  
+	private JedisCluster jedisCluster;
 
 	@Override
 	public List<User> list() {
@@ -46,5 +52,16 @@ public class UserServiceImpl implements UserService{
 			return map;
 		}
 	}
- 
+	
+	@Override
+	public String findRedis() {  
+	    jedisCluster.set("userName", "hello wenqy");  
+	    return jedisCluster.get("userName");  
+	}  
+	
+	@Cacheable(value="user",key="'user:'+#userid")
+	public User getOne(String userid) {
+		User user = userMapper.findByUserid(userid);
+		return user;
+	}
 }
